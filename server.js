@@ -4,6 +4,8 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 var User = require('./models/user');
 var bodyParser = require('body-parser');
+var ejs = require('ejs');
+var ejsEngine = require('ejs-mate'); 
 var app = express();
 
 // connect to the database
@@ -14,14 +16,18 @@ mongoose.connect('mongodb://root:123456@ds037622.mlab.com:37622/ecommerce', func
         console.log('Connected to the database');
     }
 });
-// create a write stream (in append mode) 
+
+// create a write stream (in append mode) log responses using morgan
 var mylogger = fs.createWriteStream(__dirname + '/mylogger.log', {flags: 'a'});
 
 // middlewares
 app.use(morgan('dev', { stream: mylogger }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
+app.engine('ejs', ejsEngine);
+app.set('view engine', 'ejs');
 
+// create-user route
 app.post('/create-user', function(req, res, next) {
     var user = new User();
     
@@ -35,5 +41,8 @@ app.post('/create-user', function(req, res, next) {
     });
 })
 
+//
+
+// listen on port 3000
 var port = process.env.PORT || 3000;
 app.listen(port);
