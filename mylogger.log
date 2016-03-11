@@ -1,0 +1,17 @@
+[0mGET / [36m304 [0m4.383 ms - -[0m
+[0mGET / [36m304 [0m0.723 ms - -[0m
+[0mGET / [36m304 [0m4.622 ms - -[0m
+::1 - - [09/Mar/2016:21:13:16 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
+[0mGET /index [0m- [0m- ms - -[0m
+[0mGET /index [32m200 [0m3.589 ms - 29[0m
+[0mGET /index [36m304 [0m1.451 ms - -[0m
+[0mPOST /create-user [32m200 [0m673.285 ms - 28[0m
+[0mPOST /create-user [32m200 [0m857.485 ms - 28[0m
+[0mGET /index [33m404 [0m1.544 ms - 18[0m
+[0mGET / [33m404 [0m0.591 ms - 13[0m
+[0mGET / [33m404 [0m0.265 ms - 13[0m
+[0mGET / [33m404 [0m0.310 ms - 13[0m
+[0mPOST /create-user [0m- [0m- ms - -[0m
+[0mPOST /create-user [32m200 [0m1043.458 ms - 28[0m
+[0mPOST /create-user [31m500 [0m734.279 ms - 1662[0m
+[0mGET / [33m404 [0m3.239 ms - 13[0m
