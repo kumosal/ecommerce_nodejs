@@ -11,7 +11,7 @@ var app = express();
 // connect to the database
 mongoose.connect('mongodb://root:123456@ds037622.mlab.com:37622/ecommerce', function(err) {
     if (err) {
-        console.log(err);
+        console.log("coudn't connect to the database: " + err);
     } else {
         console.log('Connected to the database');
     }
@@ -41,7 +41,14 @@ app.post('/create-user', function(req, res, next) {
     });
 })
 
-//
+// creates a home route
+app.get('/', function(req, res) {
+   res.render('home'); 
+});
+// create an about page route
+app.get('/about', function(req, res) {
+   res.render('about'); 
+});
 
 // listen on port 3000
 var port = process.env.PORT || 3000;
